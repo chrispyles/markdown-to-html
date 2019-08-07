@@ -106,17 +106,17 @@ elif len(sys.argv) == 2 and "*" in sys.argv[1]:
 else:
 	file_names = sys.argv[1:]
 
-for file_name in file_names:
-	markdowner = md.Markdown()
+	for file_name in file_names:
+		markdowner = md.Markdown()
 
-	with open(file_name) as f:
-		html = markdowner.convert(f.read())
+		with open(file_name) as f:
+			html = markdowner.convert(f.read())
 
-	match = re.search(table_regex, html)
-	while match != None:
-		html = re.sub(table_regex, replace_table(match[0]), html)
 		match = re.search(table_regex, html)
+		while match != None:
+			html = re.sub(table_regex, replace_table(match[0]), html)
+			match = re.search(table_regex, html)
 
 
-	with open(file_name[:-2] + "html", "w+") as f:
-		f.write(html_head + html + html_end)
+		with open(file_name[:-2] + "html", "w+") as f:
+			f.write(html_head + html + html_end)
