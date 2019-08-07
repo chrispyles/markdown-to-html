@@ -15,8 +15,12 @@ html_head = """
 	<link href="https://fonts.googleapis.com/css?family=Poppins:400,400i,600,700|Roboto:400,400i,700&display=swap" rel="stylesheet">
 	<style type="text/css">
 		h1, h2, h3, h4, h5, h6 {
-			font-family: 'Poppins', sans-serif;
+			font-family: 'Roboto', sans-serif;
 			font-weight: 600;
+		}
+
+		h1, h2 {
+			letter-spacing: 1px;
 		}
 
 		h1 {
