@@ -9,3 +9,8 @@ This is a test _markdown_ **file**.
 ```
 This is some code.
 ```
+
+| This is | a | table |
+|---|---|---|
+| 1 | 2 | 3 |
+| 4 | 5 | 6 |

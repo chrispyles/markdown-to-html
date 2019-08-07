@@ -4,9 +4,14 @@
 <head>
 	<link href="https://fonts.googleapis.com/css?family=Poppins:400,400i,600,700|Roboto:400,400i,700&display=swap" rel="stylesheet">
 	<style type="text/css">
+
 		h1, h2, h3, h4, h5, h6 {
 			font-family: 'Roboto', sans-serif;
 			font-weight: 600;
+		}
+
+		h1, h2 {
+			letter-spacing: 1px;
 		}
 
 		h1 {
@@ -14,22 +19,42 @@
 		}
 
 		h2 {
-			font-size: 24pt;
+			font-size: 20pt;
 		}
 
 		h3 {
 			font-size: 14pt;
 		}
 
-		p {
+		p, ul, th, td {
 			font-family: 'Roboto', sans-serif;
 			font-size: 12pt;
+		}
+
+		th, td {
+			border-top: 1px solid black;
+			border-left: 1px solid black;
+			text-align: center;
+		}
+
+		th {
+			font-weight: 600;
 		}
 
 		div {
 			width: 65%;
 			margin: 0 auto;
 		}
+
+		table {
+			width: 50%;
+			margin: 0 auto;
+			border-right: 1px solid black;
+			border-bottom: 1px solid black;
+			border-spacing: 0;
+			table-layout: fixed;
+		}
+
 	</style>
 </head>
 <body><div>
@@ -44,6 +69,8 @@
 <p><code>
 This is some code.
 </code></p>
+
+<table><tr><th>This is</th><th>a</th><th>table</th></tr><tr><td>1</td><td>2</td><td>3</td></tr><tr><td>4</td><td>5</td><td>6</td></tr></table>
 
 </div></body>
 </html>
