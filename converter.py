@@ -28,7 +28,7 @@ html_head = """
 		}
 
 		h2 {
-			font-size: 24pt;
+			font-size: 20pt;
 		}
 
 		h3 {
