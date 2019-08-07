@@ -66,6 +66,13 @@ html_head = """
 			table-layout: fixed;
 		}
 
+		p.code {
+			width: 95%;
+			margin: 10px auto;
+			padding: 10px;
+			background-color: rgb(222, 222, 222);
+		}
+
 	</style>
 </head>
 <body><div>
@@ -77,6 +84,10 @@ html_end = """
 """
 
 table_regex = r"\<p\>\|(.*\|)+\n\|(\-+\|)+\n(\|.*\|\n)*\|.*\|\<\/p\>"
+code_regex = r"\<p\>\<code\>"
+
+def add_code_class(code):
+	return re.sub(code_regex, """<p class="code"><code>""", code)
 
 def replace_table(table):
     html = "<table><tr><th>"
@@ -117,6 +128,10 @@ else:
 			html = re.sub(table_regex, replace_table(match[0]), html)
 			match = re.search(table_regex, html)
 
+		match = re.search(code_regex, html)
+		while match != None:
+			html = add_code_class(html)
+			match = re.search(code_regex, html)
 
 		with open(file_name[:-2] + "html", "w+") as f:
 			f.write(html_head + html + html_end)
