@@ -45,6 +45,7 @@ html_head = """
 			border-top: 1px solid black;
 			border-left: 1px solid black;
 			text-align: center;
+			padding: 5px 0;
 		}
 
 		th {
@@ -57,7 +58,7 @@ html_head = """
 		}
 
 		table {
-			width: 50%;
+			width: 75%;
 			margin: 0 auto;
 			border-right: 1px solid black;
 			border-bottom: 1px solid black;
