@@ -9,7 +9,7 @@ import glob
 
 if len(sys.argv) == 1:
 	print("Please enter a filename.")
-else if len(sys.argv) == 2 and "*" in sys.argv[2]:
+elif len(sys.argv) == 2 and "*" in sys.argv[2]:
 	file_names = glob.glob(sys.argv[2])
 else:
 	file_names = sys.argv[1:]
