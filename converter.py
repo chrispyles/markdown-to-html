@@ -45,7 +45,7 @@ html_head = """
 			border-top: 1px solid black;
 			border-left: 1px solid black;
 			text-align: center;
-			padding: 5px 0;
+			padding: 5px 2px;
 		}
 
 		th {
