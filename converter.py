@@ -83,24 +83,24 @@ def replace_table(table):
 	"""
 	Generates HTML tables from MD tables
 	"""
-    html = "<table><tr><th>"
-    table = table[3:-4]
-    lines = table.split("\n")
-    headers = lines[0][2:-2].split(" | ")
-    for h in headers:
-        html += h + "</th><th>"
-    html = html[:-4]
-    html += "</tr><tr>"
-    for line in lines[2:]:
-        data = line[2:-2].split(" | ")
-        html += "<td>"
-        for d in data:
-            html += d + "</td><td>"
-        html = html[:-4]
-        html += "</tr><tr>"
-    html = html[:-4]
-    html += "</table>"
-    return html
+	html = "<table><tr><th>"
+	table = table[3:-4]
+	lines = table.split("\n")
+	headers = lines[0][2:-2].split(" | ")
+	for h in headers:
+	    html += h + "</th><th>"
+	html = html[:-4]
+	html += "</tr><tr>"
+	for line in lines[2:]:
+	    data = line[2:-2].split(" | ")
+	    html += "<td>"
+	    for d in data:
+	        html += d + "</td><td>"
+	    html = html[:-4]
+	    html += "</tr><tr>"
+	html = html[:-4]
+	html += "</table>"
+	return html
 
 # construct the HTML file if no nav
 if not has_nav:
