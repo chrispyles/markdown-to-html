@@ -10,6 +10,84 @@ import re
 import argparse
 import yaml
 
+html_template = """
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="https://fonts.googleapis.com/css?family=Poppins:400,400i,600,700|Roboto:400,400i,700&display=swap" rel="stylesheet">
+	<style type="text/css">
+
+		h1, h2, h3, h4, h5, h6 {
+			font-family: 'Roboto', sans-serif;
+			font-weight: 600;
+		}
+
+		h1, h2 {
+			letter-spacing: 1px;
+		}
+
+		h1 {
+			font-size: 30pt;
+		}
+
+		h2 {
+			font-size: 20pt;
+		}
+
+		h3 {
+			font-size: 14pt;
+		}
+
+		p, ul, th, td {
+			font-family: 'Roboto', sans-serif;
+			font-size: 12pt;
+		}
+
+		th, td {
+			border-top: 1px solid black;
+			border-left: 1px solid black;
+			text-align: center;
+			padding: 5px 2px;
+		}
+
+		th {
+			font-weight: 600;
+		}
+
+		div {
+			width: 65%;
+			margin: 0 auto;
+		}
+
+		table {
+			width: 75%;
+			margin: 0 auto;
+			border-right: 1px solid black;
+			border-bottom: 1px solid black;
+			border-spacing: 0;
+			table-layout: fixed;
+		}
+
+		p.code {
+			width: 95%;
+			margin: 10px auto;
+			padding: 10px;
+			background-color: rgba(222, 222, 222, 0.5);
+		}
+
+		nav {
+			position: fixed;
+			width: 30%;
+			padding-left: 5px;
+		}
+
+	</style>
+</head>
+<body><div>
+</div></body>
+</html>
+"""
+
 # create CLI argument parser and extract arguments
 parser = argparse.ArgumentParser(description="convert Markdown to HTML")
 parser.add_argument("-s", "--site-info", dest="site", help="add metadata to the HTML files")
@@ -60,12 +138,11 @@ def add_in_head(html):
 	"""
 	return re.sub(head_regex, new_head, html)
 
-def sub_in_html(f, html):
+def sub_in_html(html_template, html):
 	"""
 	Substitutes an empty <div></div> in template for the converted HTML
 	"""
-	ret = f.read()
-	return re.sub(div_regex, html, ret)
+	return re.sub(div_regex, html, html_template)
 
 def add_in_nav_html(html):
 	"""
@@ -138,9 +215,8 @@ if not has_nav:
 
 		html += "\n</div>"
 
-		# open template and substitute in new HTML
-		with open("template.html") as f:
-			html = sub_in_html(f, html)
+		# substitute in new HTML
+		html = sub_in_html(html_template, html)
 
 		# write the HTML file
 		with open(file_name[:-2] + "html", "w+") as f:
@@ -174,9 +250,8 @@ else:
 
 		html += "\n</div>"
 
-		# open template and substitute in new HTML
-		with open("template.html") as f:
-			html = sub_in_html(f, html)
+		# substitute in new HTML
+		html = sub_in_html(html_template, html)
 
 		# add in navigation menu
 		html = add_in_nav_html(html)
