@@ -11,7 +11,7 @@ black = "#1d1e19"
 white = "#f6f7ee"
 grey = "#625f4b"
 
-class MDtoHTMLStyle(Style):
+class Monokai(Style):
 	default_style = ""
 	styles = {
 		Comment: "italic {}".format(grey),
