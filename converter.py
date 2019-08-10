@@ -43,7 +43,7 @@ html_template = """
 			font-size: 14pt;
 		}}
 
-		p, ul, th, td {{
+		p, ul, th, td, ol {{
 			font-family: 'Roboto', sans-serif;
 			font-size: 12pt;
 		}}
