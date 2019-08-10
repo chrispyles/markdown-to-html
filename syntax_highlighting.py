@@ -30,7 +30,6 @@ def run_lexer(code):
 	syntax = get_syntax(code)
 	lexer = get_lexer(syntax)
 	if lexer == None:
-		return None
-	else:
-		code = re.sub(code_start_regex, "", code)
-		return highlight(code, lexer(), HtmlFormatter())
+		lexer = lx.TextLexer
+	code = re.sub(code_start_regex, "", code)
+	return highlight(code, lexer(), HtmlFormatter())

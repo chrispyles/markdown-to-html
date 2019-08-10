@@ -20,6 +20,10 @@ def fn(x):
 pip install something
 ```
 
+```
+this does not have highlighting
+```
+
 | This is | a | table |
 |---|---|---|
 | 1 | 2 | 3 |

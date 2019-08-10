@@ -80,11 +80,11 @@ def add_in_nav_html(html):
 	"""
 	return re.sub(r"\<body\>\<div\>", nav_html, html)
 
-def add_code_class(html):
+def add_code_class(markdown):
 	"""
 	Uses pygments to add syntax highlighting to code
 	"""
-	return sh.run_lexer(html)
+	return sh.run_lexer(markdown)
 
 def replace_table(table):
 	"""
