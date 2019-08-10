@@ -9,6 +9,11 @@ import glob
 import re
 import argparse
 import yaml
+from pygments import highlight
+from pygments.lexers import PythonLexer
+from pygments.formatters import HtmlFormatter
+
+code_css = HtmlFormatter().get_style_defs("")
 
 html_template = """
 <!DOCTYPE html>
@@ -17,76 +22,93 @@ html_template = """
 	<link href="https://fonts.googleapis.com/css?family=Poppins:400,400i,600,700|Roboto:400,400i,700&display=swap" rel="stylesheet">
 	<style type="text/css">
 
-		h1, h2, h3, h4, h5, h6 {
+		h1, h2, h3, h4, h5, h6 {{
 			font-family: 'Roboto', sans-serif;
 			font-weight: 600;
-		}
+		}}
 
-		h1, h2 {
+		h1, h2 {{
 			letter-spacing: 1px;
-		}
+		}}
 
-		h1 {
+		h1 {{
 			font-size: 30pt;
-		}
+		}}
 
-		h2 {
+		h2 {{
 			font-size: 20pt;
-		}
+		}}
 
-		h3 {
+		h3 {{
 			font-size: 14pt;
-		}
+		}}
 
-		p, ul, th, td {
+		p, ul, th, td {{
 			font-family: 'Roboto', sans-serif;
 			font-size: 12pt;
-		}
+		}}
 
-		th, td {
+		th, td {{
 			border-top: 1px solid black;
 			border-left: 1px solid black;
 			text-align: center;
 			padding: 5px 2px;
-		}
+		}}
 
-		th {
+		th {{
 			font-weight: 600;
-		}
+		}}
 
-		div {
+		div {{
 			width: 65%;
 			margin: 0 auto;
-		}
+		}}
 
-		table {
+		table {{
 			width: 75%;
 			margin: 0 auto;
 			border-right: 1px solid black;
 			border-bottom: 1px solid black;
 			border-spacing: 0;
 			table-layout: fixed;
-		}
+		}}
 
-		p.code {
+		p.code {{
 			width: 95%;
 			margin: 10px auto;
 			padding: 10px;
 			background-color: rgba(222, 222, 222, 0.5);
-		}
+		}}
 
-		nav {
+		nav {{
 			position: fixed;
 			width: 30%;
 			padding-left: 5px;
-		}
+		}}
+
+		/* Resize div for Pygments. */
+		div.highlight {{
+			font-size: 12pt;
+			width: 95%;
+			margin: 10px auto;
+			padding: 10px;
+			background-color: rgba(222, 222, 222, 0.5);
+		}}
+
+		pre {{
+			margin: 0;
+		}}
+
+		/* Below is imported the style from Pygments. */
+
+		{}
 
 	</style>
 </head>
 <body><div>
 </div></body>
 </html>
-"""
+""".format(code_css)
 
 # create CLI argument parser and extract arguments
 parser = argparse.ArgumentParser(description="convert Markdown to HTML")
@@ -128,7 +150,7 @@ if has_nav:
 # define regexes for replacing MD and adding sections
 div_regex = r"\<div\>\n\<\/div\>"
 table_regex = r"\<p\>\|(.*\|)+\n\|(\-+\|)+\n(\|.*\|\n)*\|.*\|\<\/p\>"
-code_regex = r"\<p\>\<code\>"
+code_regex = r"\<p\>\<code\>(.*\n)*\<\/code\>\<\/p\>"
 head_regex = r"\<head\>\n\t\<link"
 
 # utils for replacing regexes above with new HTML code
@@ -150,11 +172,14 @@ def add_in_nav_html(html):
 	"""
 	return re.sub(r"\<body\>\<div\>", nav_html, html)
 
-def add_code_class(code):
+def add_code_class(html):
 	"""
 	Adds HTML class "code" to all block code paragraphs
 	"""
-	return re.sub(code_regex, """<p class="code"><code>""", code)
+	code = re.search(code_regex, html)[0]
+	new_code = code[10:-11]
+	new_code = highlight(new_code, PythonLexer(), HtmlFormatter())
+	return re.sub(code_regex, new_code, html)
 
 def replace_table(table):
 	"""
