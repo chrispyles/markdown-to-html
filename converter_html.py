@@ -1,10 +1,10 @@
 from pygments import highlight
 from pygments.lexers import PythonLexer
 from pygments.formatters import HtmlFormatter
-from pygments_style import MDtoHTMLStyle
+from pygments_style import Monokai
 
 # get css from pygments for syntax highlighting
-code_css = HtmlFormatter(style=MDtoHTMLStyle).get_style_defs("")
+code_css = HtmlFormatter(style=Monokai).get_style_defs("")
 
 html_template = """
 <!DOCTYPE html>
