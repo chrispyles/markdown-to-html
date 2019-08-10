@@ -150,7 +150,7 @@ if has_nav:
 # define regexes for replacing MD and adding sections
 div_regex = r"\<div\>\n\<\/div\>"
 table_regex = r"\<p\>\|(.*\|)+\n\|(\-+\|)+\n(\|.*\|\n)*\|.*\|\<\/p\>"
-code_regex = r"\<p\>\<code\>(.*\n)*\<\/code\>\<\/p\>"
+code_regex = r"\<p\>\<code\>(.*\n)*?\<\/code\>\<\/p\>"
 head_regex = r"\<head\>\n\t\<link"
 
 # utils for replacing regexes above with new HTML code
