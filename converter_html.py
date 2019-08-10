@@ -1,3 +1,8 @@
+########################################################
+##### HTML & CSS Template for MD to HTML Converter #####
+#####                by Chris Pyles                #####
+########################################################
+
 from pygments import highlight
 from pygments.lexers import PythonLexer
 from pygments.formatters import HtmlFormatter
@@ -6,8 +11,7 @@ from pygments_style import Monokai
 # get css from pygments for syntax highlighting
 code_css = HtmlFormatter(style=Monokai).get_style_defs("")
 
-html_template = """
-<!DOCTYPE html>
+html_template = """<!DOCTYPE html>
 <html>
 <head>
 	<link href="https://fonts.googleapis.com/css?family=Poppins:400,400i,600,700|Roboto:400,400i,700&display=swap" rel="stylesheet">

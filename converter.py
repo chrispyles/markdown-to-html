@@ -9,11 +9,14 @@ import glob
 import re
 import argparse
 import yaml
-from converter_html import *
 from pygments import highlight
 from pygments.lexers import PythonLexer
 from pygments.formatters import HtmlFormatter
 from pygments_style import Monokai
+
+# import executables from this directory
+from converter_html import *
+import syntax_highlighting as sh
 
 # create CLI argument parser and extract arguments
 parser = argparse.ArgumentParser(description="convert Markdown to HTML")
@@ -81,10 +84,7 @@ def add_code_class(html):
 	"""
 	Uses pygments to add syntax highlighting to code
 	"""
-	code = re.search(code_regex, html)[0]
-	new_code = code[10:-11]
-	new_code = highlight(new_code, PythonLexer(), HtmlFormatter(style=Monokai))
-	return re.sub(code_regex, new_code, html, count=1)
+	return sh.run_lexer(html)
 
 def replace_table(table):
 	"""
@@ -128,14 +128,33 @@ if not has_nav:
 	for file_name in file_names:
 		markdowner = md.Markdown()
 
+		# get MD contents for syntax highlighting
 		with open(file_name) as f:
-			html = "<div>" + markdowner.convert(f.read())
+			file_md = f.read()
+
+		# get HTML for MD code
+		code_html = []
+		match = re.search(sh.code_regex, file_md)
+		while match != None:
+			code = match[0]
+			code = add_code_class(code)
+			code_html += [code]
+			file_md = re.sub(sh.code_regex, "", file_md, count=1)
+			match = re.search(sh.code_regex, file_md)
+
+		# open the MD file and convert to HTML
+		with open(file_name) as f:
+			html = "<div>\n" + markdowner.convert(f.read())
 
 		# replace MD tables with HTML tables
 		match = re.search(table_regex, html)
 		while match != None:
 			html = re.sub(table_regex, replace_table(match[0]), html)
 			match = re.search(table_regex, html)
+
+		# add back in the code with syntax highlighting
+		for code in code_html:
+			html = re.sub(code_regex, code, html, count=1)
 
 		# change block code to have HTML class "code"
 		match = re.search(code_regex, html)
@@ -163,6 +182,21 @@ else:
 	for file_name in file_names:
 		markdowner = md.Markdown()
 
+		# get MD contents for syntax highlighting
+		with open(file_name) as f:
+			file_md = f.read()
+
+		# get HTML for MD code
+		code_html = []
+		match = re.search(sh.code_regex, file_md)
+		while match != None:
+			code = match[0]
+			code = add_code_class(code)
+			code_html += [code]
+			file_md = re.sub(sh.code_regex, "", file_md, count=1)
+			match = re.search(sh.code_regex, file_md)
+
+		# open the MD file and convert to HTML
 		with open(file_name) as f:
 			html = "<div>\n" + markdowner.convert(f.read())
 
@@ -172,11 +206,9 @@ else:
 			html = re.sub(table_regex, replace_table(match[0]), html)
 			match = re.search(table_regex, html)
 
-		# change block code to have HTML class "code"
-		match = re.search(code_regex, html)
-		while match != None:
-			html = add_code_class(html)
-			match = re.search(code_regex, html)
+		# add back in the code with syntax highlighting
+		for code in code_html:
+			html = re.sub(code_regex, code, html, count=1)
 
 		html += "\n</div>"
 
