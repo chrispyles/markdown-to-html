@@ -84,6 +84,8 @@ html_template = """
 			margin: 10px auto;
 			padding: 10px;
 			background-color: #1d1e19;
+			color: #f6f7ee;
+			overflow: scroll;
 		}}
 
 		pre {{
