@@ -7,7 +7,13 @@ This is a test _markdown_ **file**.
 ### this is a level 3 header
 
 ```
-This is some code.
+import markdown2 as md
+s = "this is a string"
+4 * 7 - 11 % 5
+md.do_something()
+print(s)
+def fn(x):
+	return x**2
 ```
 
 | This is | a | table |

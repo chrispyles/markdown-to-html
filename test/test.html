@@ -29,7 +29,7 @@
 			font-size: 14pt;
 		}
 
-		p, ul, th, td {
+		p, ul, th, td, ol {
 			font-family: 'Roboto', sans-serif;
 			font-size: 12pt;
 		}
@@ -78,7 +78,7 @@
 			width: 95%;
 			margin: 10px auto;
 			padding: 10px;
-			background-color: rgba(222, 222, 222, 0.5);
+			background-color: #1d1e19;
 		}
 
 		pre {
@@ -88,73 +88,75 @@
 		/* Below is imported the style from Pygments. */
 
 		.hll { background-color: #ffffcc }
-.c { color: #408080; font-style: italic } /* Comment */
-.err { border: 1px solid #FF0000 } /* Error */
-.k { color: #008000; font-weight: bold } /* Keyword */
-.o { color: #666666 } /* Operator */
-.ch { color: #408080; font-style: italic } /* Comment.Hashbang */
-.cm { color: #408080; font-style: italic } /* Comment.Multiline */
-.cp { color: #BC7A00 } /* Comment.Preproc */
-.cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
-.c1 { color: #408080; font-style: italic } /* Comment.Single */
-.cs { color: #408080; font-style: italic } /* Comment.Special */
-.gd { color: #A00000 } /* Generic.Deleted */
-.ge { font-style: italic } /* Generic.Emph */
-.gr { color: #FF0000 } /* Generic.Error */
-.gh { color: #000080; font-weight: bold } /* Generic.Heading */
-.gi { color: #00A000 } /* Generic.Inserted */
-.go { color: #888888 } /* Generic.Output */
-.gp { color: #000080; font-weight: bold } /* Generic.Prompt */
-.gs { font-weight: bold } /* Generic.Strong */
-.gu { color: #800080; font-weight: bold } /* Generic.Subheading */
-.gt { color: #0044DD } /* Generic.Traceback */
-.kc { color: #008000; font-weight: bold } /* Keyword.Constant */
-.kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
-.kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
-.kp { color: #008000 } /* Keyword.Pseudo */
-.kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
-.kt { color: #B00040 } /* Keyword.Type */
-.m { color: #666666 } /* Literal.Number */
-.s { color: #BA2121 } /* Literal.String */
-.na { color: #7D9029 } /* Name.Attribute */
-.nb { color: #008000 } /* Name.Builtin */
-.nc { color: #0000FF; font-weight: bold } /* Name.Class */
-.no { color: #880000 } /* Name.Constant */
-.nd { color: #AA22FF } /* Name.Decorator */
-.ni { color: #999999; font-weight: bold } /* Name.Entity */
-.ne { color: #D2413A; font-weight: bold } /* Name.Exception */
-.nf { color: #0000FF } /* Name.Function */
-.nl { color: #A0A000 } /* Name.Label */
-.nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
-.nt { color: #008000; font-weight: bold } /* Name.Tag */
-.nv { color: #19177C } /* Name.Variable */
-.ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
-.w { color: #bbbbbb } /* Text.Whitespace */
-.mb { color: #666666 } /* Literal.Number.Bin */
-.mf { color: #666666 } /* Literal.Number.Float */
-.mh { color: #666666 } /* Literal.Number.Hex */
-.mi { color: #666666 } /* Literal.Number.Integer */
-.mo { color: #666666 } /* Literal.Number.Oct */
-.sa { color: #BA2121 } /* Literal.String.Affix */
-.sb { color: #BA2121 } /* Literal.String.Backtick */
-.sc { color: #BA2121 } /* Literal.String.Char */
-.dl { color: #BA2121 } /* Literal.String.Delimiter */
-.sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
-.s2 { color: #BA2121 } /* Literal.String.Double */
-.se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
-.sh { color: #BA2121 } /* Literal.String.Heredoc */
-.si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
-.sx { color: #008000 } /* Literal.String.Other */
-.sr { color: #BB6688 } /* Literal.String.Regex */
-.s1 { color: #BA2121 } /* Literal.String.Single */
-.ss { color: #19177C } /* Literal.String.Symbol */
-.bp { color: #008000 } /* Name.Builtin.Pseudo */
-.fm { color: #0000FF } /* Name.Function.Magic */
-.vc { color: #19177C } /* Name.Variable.Class */
-.vg { color: #19177C } /* Name.Variable.Global */
-.vi { color: #19177C } /* Name.Variable.Instance */
-.vm { color: #19177C } /* Name.Variable.Magic */
-.il { color: #666666 } /* Literal.Number.Integer.Long */
+.c { color: #625f4b; font-style: italic } /* Comment */
+.g { color: #fd8700 } /* Generic */
+.k { color: #53d1ed; font-weight: bold } /* Keyword */
+.n { color: #f6f7ee } /* Name */
+.o { color: #f7005f } /* Operator */
+.ch { color: #625f4b; font-style: italic } /* Comment.Hashbang */
+.cm { color: #625f4b; font-style: italic } /* Comment.Multiline */
+.cp { color: #625f4b; font-style: italic } /* Comment.Preproc */
+.cpf { color: #625f4b; font-style: italic } /* Comment.PreprocFile */
+.c1 { color: #625f4b; font-style: italic } /* Comment.Single */
+.cs { color: #625f4b; font-style: italic } /* Comment.Special */
+.gd { color: #fd8700 } /* Generic.Deleted */
+.ge { color: #fd8700 } /* Generic.Emph */
+.gr { color: #fd8700 } /* Generic.Error */
+.gh { color: #fd8700 } /* Generic.Heading */
+.gi { color: #fd8700 } /* Generic.Inserted */
+.go { color: #fd8700 } /* Generic.Output */
+.gp { color: #fd8700 } /* Generic.Prompt */
+.gs { color: #fd8700 } /* Generic.Strong */
+.gu { color: #fd8700 } /* Generic.Subheading */
+.gt { color: #fd8700 } /* Generic.Traceback */
+.kc { color: #53d1ed; font-weight: bold } /* Keyword.Constant */
+.kd { color: #53d1ed; font-weight: bold } /* Keyword.Declaration */
+.kn { color: #53d1ed; font-weight: bold } /* Keyword.Namespace */
+.kp { color: #53d1ed; font-weight: bold } /* Keyword.Pseudo */
+.kr { color: #53d1ed; font-weight: bold } /* Keyword.Reserved */
+.kt { color: #53d1ed; font-weight: bold } /* Keyword.Type */
+.m { color: #9d60ff } /* Literal.Number */
+.s { color: #e0d75a } /* Literal.String */
+.na { color: #f6f7ee } /* Name.Attribute */
+.nb { color: #f6f7ee } /* Name.Builtin */
+.nc { color: #53d1ed; font-weight: bold } /* Name.Class */
+.no { color: #f6f7ee } /* Name.Constant */
+.nd { color: #f6f7ee } /* Name.Decorator */
+.ni { color: #f6f7ee } /* Name.Entity */
+.ne { color: #f6f7ee } /* Name.Exception */
+.nf { color: #96e309 } /* Name.Function */
+.nl { color: #f6f7ee } /* Name.Label */
+.nn { color: #f6f7ee } /* Name.Namespace */
+.nx { color: #f6f7ee } /* Name.Other */
+.py { color: #f6f7ee } /* Name.Property */
+.nt { color: #f6f7ee } /* Name.Tag */
+.nv { color: #f6f7ee } /* Name.Variable */
+.ow { color: #f7005f } /* Operator.Word */
+.mb { color: #9d60ff } /* Literal.Number.Bin */
+.mf { color: #9d60ff } /* Literal.Number.Float */
+.mh { color: #9d60ff } /* Literal.Number.Hex */
+.mi { color: #9d60ff } /* Literal.Number.Integer */
+.mo { color: #9d60ff } /* Literal.Number.Oct */
+.sa { color: #e0d75a } /* Literal.String.Affix */
+.sb { color: #e0d75a } /* Literal.String.Backtick */
+.sc { color: #e0d75a } /* Literal.String.Char */
+.dl { color: #e0d75a } /* Literal.String.Delimiter */
+.sd { color: #e0d75a } /* Literal.String.Doc */
+.s2 { color: #e0d75a } /* Literal.String.Double */
+.se { color: #e0d75a } /* Literal.String.Escape */
+.sh { color: #e0d75a } /* Literal.String.Heredoc */
+.si { color: #e0d75a } /* Literal.String.Interpol */
+.sx { color: #e0d75a } /* Literal.String.Other */
+.sr { color: #e0d75a } /* Literal.String.Regex */
+.s1 { color: #e0d75a } /* Literal.String.Single */
+.ss { color: #e0d75a } /* Literal.String.Symbol */
+.bp { color: #f6f7ee } /* Name.Builtin.Pseudo */
+.fm { color: #96e309 } /* Name.Function.Magic */
+.vc { color: #f6f7ee } /* Name.Variable.Class */
+.vg { color: #f6f7ee } /* Name.Variable.Global */
+.vi { color: #f6f7ee } /* Name.Variable.Instance */
+.vm { color: #f6f7ee } /* Name.Variable.Magic */
+.il { color: #9d60ff } /* Literal.Number.Integer.Long */
 
 	</style>
 </head>
@@ -174,7 +176,13 @@
 
 <h3>this is a level 3 header</h3>
 
-<div class="highlight"><pre><span></span><span class="n">This</span> <span class="ow">is</span> <span class="n">some</span> <span class="n">code</span><span class="o">.</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">markdown2</span> <span class="kn">as</span> <span class="nn">md</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;this is a string&quot;</span>
+<span class="mi">4</span> <span class="o">*</span> <span class="mi">7</span> <span class="o">-</span> <span class="mi">11</span> <span class="o">%</span> <span class="mi">5</span>
+<span class="n">md</span><span class="o">.</span><span class="n">do_something</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">fn</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
 </pre></div>
 
 
