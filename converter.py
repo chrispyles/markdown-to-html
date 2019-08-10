@@ -179,7 +179,7 @@ def add_code_class(html):
 	code = re.search(code_regex, html)[0]
 	new_code = code[10:-11]
 	new_code = highlight(new_code, PythonLexer(), HtmlFormatter())
-	return re.sub(code_regex, new_code, html)
+	return re.sub(code_regex, new_code, html, count=1)
 
 def replace_table(table):
 	"""
