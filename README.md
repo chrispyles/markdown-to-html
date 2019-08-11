@@ -8,13 +8,13 @@ You can find a sample of a site generated from this package at [https://mcautogr
 
 The recommended method for installing this package is to add it as a submodule to the repo containing your Markdown files:
 
-```bash
+```git
 git submodule add https://github.com/chrispyles/markdown-to-html
 ```
 
 Then, when running the converter, the only changes to the syntax below would be prepending the folder name to the file path:
 
-```bash
+```
 python3 markdown-to-html/converter.py ...
 ```
 
@@ -22,13 +22,13 @@ python3 markdown-to-html/converter.py ...
 
 This package is relies on the executable file `converter.py` and is meant to be run from the command line. Once you're in the directory which contains this file, the command line usage is
 
-```bash
+```
 python3 converter.py ...
 ```
 
 Here is the help entry for this file:
 
-```bash
+```
 usage: converter.py [-h] [-s SITE] [-n NAV] ...
 
 convert Markdown to HTML
@@ -49,7 +49,7 @@ Running the converter will place HTML files in the same directory as your Markdo
 
 If you would like to add metadata to your page, including a navigation menu, do so by creating a YAML file containing this metadata and passing the file path to the `-s` flag, e.g.
 
-```bash
+```
 python3 converter.py -s meta.yml ...
 ```
 
