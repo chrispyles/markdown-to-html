@@ -44,3 +44,48 @@ optional arguments:
 ```
 
 Running the converter will place HTML files in the same directory as your Markdown files, with the `.md` extension replaced with `.html`.
+
+### Page Metadata
+
+If you would like to add metadata to your page, including a navigation menu, do so by creating a YAML file containing this metadata and passing the file path to the `-s` flag, e.g.
+
+```bash
+python3 converter.py -s meta.yml ...
+```
+
+The structure of your YAML file should be:
+
+```yaml
+title: page title
+author: page author
+description: page description
+navigation:
+  nav_title: navigation menu title
+  links:
+    - title: link name
+      url: HTML file url
+    - title: ...
+      url: ...
+    ...
+```
+
+Currently, the `title` must be set if you use this option. The converter does not yet support navigation submenus, so all links will be rendered as
+
+* [Link 1]()
+* [Link 2]()
+* [Link 3]()
+* etc.
+
+### Navigation Menu
+
+The converter also supports adding only a navigation menu without page metadata. To do this, pass a YAML file to the `-n` flag. It should have the following structure:
+
+```yaml
+nav_title: navigation menu title
+links:
+  - title: link name
+    url: HTML file url
+  - title: ...
+    url: ...
+  ...
+```
