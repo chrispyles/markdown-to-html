@@ -43,7 +43,7 @@ optional arguments:
   -n NAV, --nav NAV     add a YAML file to use for navigation menu
 ```
 
-Running the converter will place HTML files in the same directory as your Markdown files, with the `.md` extension replaced with `.html`.
+Running the converter will place HTML files in the same directory as your Markdown files, with the `.md` extension replaced with `.html`. The HTML files come with CSS in a `style` tag in the `head`.
 
 ### Page Metadata
 
