@@ -6,6 +6,8 @@ This is a test _markdown_ **file**.
 
 ### this is a level 3 header
 
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/chrispyles/census_api/master)
+
 ```python
 import markdown2 as md
 s = "this is a string"

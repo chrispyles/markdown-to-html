@@ -12,10 +12,23 @@ from pygments_style import Monokai
 code_css = HtmlFormatter(style=Monokai).get_style_defs("")
 
 html_template = """<!DOCTYPE html>
+
+<!--
+		Generated using Markdown to HTML Converter by Chris Pyles.
+		More at https://github.com/chrispyles/markdown-to-html
+-->
+
 <html>
 <head>
 	<link href="https://fonts.googleapis.com/css?family=Poppins:400,400i,600,700|Roboto:400,400i,700&display=swap" rel="stylesheet">
 	<style type="text/css">
+
+		/* CSS for MD to HTML Converter
+			by Chris Pyles */
+
+    	body {{
+    		margin-top: -20px;
+    	}}
 
 		h1, h2, h3, h4, h5, h6 {{
 			font-family: 'Roboto', sans-serif;
