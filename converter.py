@@ -26,8 +26,8 @@ parser.add_argument(dest="files", nargs=argparse.REMAINDER, help="files to be co
 namespace = vars(parser.parse_args())
 
 # determine whether or not navigation menu & metadata need to be added
-has_nav = "nav" in namespace or "site" in namespace
-has_meta = "site" in namespace
+has_nav = namespace["nav"] != None or namespace["site"] != None
+has_meta = namespace["site"] != None
 
 # create HTML segment of metadata
 if has_meta:
@@ -48,18 +48,19 @@ if has_nav:
 		with open(namespace["nav"]) as f:
 			nav = yaml.safe_load(f)
 
-	nav_html = "<body><nav>\n<h3>" + nav["nav_title"] + "</h3>\n<ul>\n"
+	nav_html = "<body><nav>\n<h3>" + nav["nav_title"] + "</h3>\n<ul class=\"nav\">\n"
 
 	for link in nav["links"]:
-		nav_html += "<li><a href=\"" + link["url"] + "\">" + link["title"] + "</a></li>\n"
+		nav_html += "<li class=\"nav\"><a href=\"" + link["url"] + "\">" + link["title"] + "</a></li>\n"
 
-	nav_html += "</nav><div>\n"
+	nav_html += "</nav><div id=\"body\">\n"
 
 # define regexes for replacing MD and adding sections
-div_regex = r"\<div\>\n\<\/div\>"
+div_regex = r"\<div id=\"body\"\>\n\<\/div\>"
 table_regex = r"\<p\>\|(.*\|)+\n\|(\-+\|)+\n(\|.*\|\n)*\|.*\|\<\/p\>"
 code_regex = r"\<p\>\<code\>(.*\n)*?\<\/code\>\<\/p\>"
 head_regex = r"\<head\>\n\t\<link"
+nav_regex = r"\<body\>\<nav\>"
 
 # utils for replacing regexes above with new HTML code
 def add_in_head(html):
@@ -78,7 +79,7 @@ def add_in_nav_html(html):
 	"""
 	Adds in navigation menu
 	"""
-	return re.sub(r"\<body\>\<div\>", nav_html, html)
+	return re.sub(r"\<body\>\<div id=\"body\"\>", nav_html, html)
 
 def add_code_class(markdown):
 	"""
@@ -144,7 +145,7 @@ if not has_nav:
 
 		# open the MD file and convert to HTML
 		with open(file_name) as f:
-			html = "<div>\n" + markdowner.convert(f.read())
+			html = "<div id=\"body\">\n" + markdowner.convert(f.read())
 
 		# replace MD tables with HTML tables
 		match = re.search(table_regex, html)
@@ -169,7 +170,7 @@ if not has_nav:
 
 		# write the HTML file
 		with open(file_name[:-2] + "html", "w+") as f:
-			f.write(html_head + html + html_end)
+			f.write(html)
 
 # construct HTML with nav
 else:
@@ -198,7 +199,7 @@ else:
 
 		# open the MD file and convert to HTML
 		with open(file_name) as f:
-			html = "<div>\n" + markdowner.convert(f.read())
+			html = "<div id=\"body\">\n" + markdowner.convert(f.read())
 
 		# replace MD tables with HTML tables
 		match = re.search(table_regex, html)
@@ -221,6 +222,12 @@ else:
 		# add in metadata
 		if has_meta:
 			html = add_in_head(html)
+
+		# add in top div
+		top_div = """<body>
+		<div id="top"></div>
+		<nav>"""
+		html = re.sub(nav_regex, top_div, html)
 
 		# write the HTML file
 		with open(file_name[:-2] + "html", "w+") as f:

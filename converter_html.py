@@ -16,6 +16,8 @@ html_template = """<!DOCTYPE html>
 <!--
 		Generated using Markdown to HTML Converter by Chris Pyles.
 		More at https://github.com/chrispyles/markdown-to-html
+
+		Color scheme from https://colorhunt.co/palette/155146
 -->
 
 <html>
@@ -27,7 +29,9 @@ html_template = """<!DOCTYPE html>
 			by Chris Pyles */
 
     	body {{
-    		margin-top: -20px;
+    		margin-top: -27px;
+    		margin-left: 0;
+    		background-color: #ebefd0;
     	}}
 
 		h1, h2, h3, h4, h5, h6 {{
@@ -56,6 +60,20 @@ html_template = """<!DOCTYPE html>
 			font-size: 12pt;
 		}}
 
+		ul.nav {{
+			list-style-type: none;
+			padding-left: 0;
+		}}
+
+		li.nav {{
+			padding-left: 20px;
+			width: 230px;
+		}}
+
+		li.nav:hover {{
+			background-color: rgba(256, 256, 256, 0.5);
+		}}
+
 		th, td {{
 			border-top: 1px solid black;
 			border-left: 1px solid black;
@@ -68,8 +86,29 @@ html_template = """<!DOCTYPE html>
 		}}
 
 		div {{
-			width: 65%;
-			margin: 0 auto;
+			width: 800px;
+			margin: 0 0 0 255px;
+			background-color: white;
+			padding: 0 20px;
+			margin-top: -27px;
+		}}
+
+		div#top {{
+			background-color: #ff502f;
+			margin-top: 27px;
+			width: 100%;
+			height: 10px;
+			margin-left: 0;
+			position: fixed;
+			z-index: 1;
+		}}
+
+		div#body {{
+			position: fixed;
+			margin-top: 15px;
+			height: 100%;
+			padding-bottom: 100%;
+			overflow: scroll;
 		}}
 
 		table {{
@@ -90,8 +129,12 @@ html_template = """<!DOCTYPE html>
 
 		nav {{
 			position: fixed;
-			width: 30%;
+			width: 250px;
 			padding-left: 5px;
+			height: 100%;
+			background-color: #49beb7;
+			color: white;
+			margin-top: 36px;
 		}}
 
 		/* Resize div for Pygments. */
@@ -115,7 +158,7 @@ html_template = """<!DOCTYPE html>
 
 	</style>
 </head>
-<body><div>
+<body><div id="body">
 </div></body>
 </html>
 """.format(code_css)
