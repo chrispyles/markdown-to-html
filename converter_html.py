@@ -7,11 +7,15 @@ from pygments import highlight
 from pygments.lexers import PythonLexer
 from pygments.formatters import HtmlFormatter
 from pygments_style import Monokai
+from pygments_style import Colors
 
 # get css from pygments for syntax highlighting
 code_css = HtmlFormatter(style=Monokai).get_style_defs("")
 
-html_template = """<!DOCTYPE html>
+# color palette
+palette = ["#ebefd0", "#ff502f", "#49beb7"]
+
+html_template = f"""<!DOCTYPE html>
 
 <!--
 		Generated using Markdown to HTML Converter by Chris Pyles.
@@ -31,7 +35,7 @@ html_template = """<!DOCTYPE html>
     	body {{
     		margin-top: -27px;
     		margin-left: 0;
-    		background-color: #ebefd0;
+    		background-color: {palette[0]};
     	}}
 
 		h1, h2, h3, h4, h5, h6 {{
@@ -94,7 +98,7 @@ html_template = """<!DOCTYPE html>
 		}}
 
 		div#top {{
-			background-color: #ff502f;
+			background-color: {palette[1]};
 			margin-top: 27px;
 			width: 100%;
 			height: 10px;
@@ -132,7 +136,7 @@ html_template = """<!DOCTYPE html>
 			width: 250px;
 			padding-left: 5px;
 			height: 100%;
-			background-color: #49beb7;
+			background-color: {palette[2]};
 			color: white;
 			margin-top: 36px;
 		}}
@@ -143,8 +147,8 @@ html_template = """<!DOCTYPE html>
 			width: 95%;
 			margin: 10px auto;
 			padding: 10px;
-			background-color: #1d1e19;
-			color: #f6f7ee;
+			background-color: {Colors.BLACK};
+			color: {Colors.WHITE};
 			overflow: scroll;
 		}}
 
@@ -154,11 +158,11 @@ html_template = """<!DOCTYPE html>
 
 		/* Below is imported the style from Pygments. */
 
-		{}
+		{code_css}
 
 	</style>
 </head>
 <body><div id="body">
 </div></body>
 </html>
-""".format(code_css)
+"""
