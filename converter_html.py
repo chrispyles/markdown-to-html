@@ -3,6 +3,7 @@
 #####                by Chris Pyles                #####
 ########################################################
 
+import re
 from pygments import highlight
 from pygments.lexers import PythonLexer
 from pygments.formatters import HtmlFormatter
@@ -15,6 +16,11 @@ code_css = HtmlFormatter(style=Monokai).get_style_defs("")
 # color palette
 palette = ["#00b0da", "#46535e", "#46535e"]
 
+# imported fonts
+font_url = "https://fonts.googleapis.com/css?family=Roboto:400,400i,700&display=swap"
+font_regex = r"(=|\|)(\w+)(:|&)"
+font_name = re.search(font_regex, font_url)[1]
+
 html_template = f"""<!DOCTYPE html>
 
 <!--
@@ -24,7 +30,7 @@ html_template = f"""<!DOCTYPE html>
 
 <html>
 <head>
-	<link href="https://fonts.googleapis.com/css?family=Poppins:400,400i,600,700|Roboto:400,400i,700&display=swap" rel="stylesheet">
+	<link href="{font_url}" rel="stylesheet">
 	<style type="text/css">
 
 		/* CSS for MD to HTML Converter
@@ -37,7 +43,7 @@ html_template = f"""<!DOCTYPE html>
     	}}
 
 		h1, h2, h3, h4, h5, h6 {{
-			font-family: 'Roboto', sans-serif;
+			font-family: '{font_name}', sans-serif;
 			font-weight: 600;
 		}}
 
@@ -58,7 +64,7 @@ html_template = f"""<!DOCTYPE html>
 		}}
 
 		p, ul, th, td, ol {{
-			font-family: 'Roboto', sans-serif;
+			font-family: '{font_name}', sans-serif;
 			font-size: 12pt;
 		}}
 
