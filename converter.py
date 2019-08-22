@@ -51,7 +51,9 @@ if has_nav:
 	nav_html = "<body><nav>\n<h3>" + nav["nav_title"] + "</h3>\n<ul class=\"nav\">\n"
 
 	for link in nav["links"]:
-		nav_html += "<li class=\"nav\"><a href=\"" + link["url"] + "\">" + link["title"] + "</a></li>\n"
+		nav_html += "<li class=\"nav\"><a class=\"nav\" href=\"" + link["url"] + "\">" + link["title"] + "</a></li>\n"
+		if link["url"] == "index.html":
+			home_page_name = link["title"]
 
 	nav_html += "</nav><div id=\"body\">\n"
 
@@ -224,9 +226,30 @@ else:
 			html = add_in_head(html)
 
 		# add in top div
-		top_div = """<body>
-		<div id="top"></div>
-		<nav>"""
+		for link in nav["links"]:
+			if link["url"][:-5] + ".md" == file_name:
+				page_title = link["title"]
+				page_url = link["url"][:-5]
+
+		try:
+			if page_url == "index":
+				top_div = f"""<body>
+				<div id="top"><p id="header">
+				{home_page_name}
+				</p></div>
+				<nav>"""
+			else:
+				top_div = f"""<body>
+				<div id="top"><p id="header">
+				<a class="nav" href="index.html">{home_page_name}</a> &nbsp;<span style="font-size: 9pt;">►</span>&nbsp; {page_title}
+				</p></div>
+				<nav>"""
+
+		except NameError:
+			top_div = f"""<body>
+			<div id="top"></div>
+			<nav>"""
+
 		html = re.sub(nav_regex, top_div, html)
 
 		# write the HTML file

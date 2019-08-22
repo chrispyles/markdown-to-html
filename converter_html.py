@@ -13,15 +13,13 @@ from pygments_style import Colors
 code_css = HtmlFormatter(style=Monokai).get_style_defs("")
 
 # color palette
-palette = ["#ebefd0", "#ff502f", "#49beb7"]
+palette = ["#00b0da", "#46535e", "#46535e"]
 
 html_template = f"""<!DOCTYPE html>
 
 <!--
 		Generated using Markdown to HTML Converter by Chris Pyles.
 		More at https://github.com/chrispyles/markdown-to-html
-
-		Color scheme from https://colorhunt.co/palette/155146
 -->
 
 <html>
@@ -64,6 +62,11 @@ html_template = f"""<!DOCTYPE html>
 			font-size: 12pt;
 		}}
 
+		p#header {{
+			color: white;
+			padding-left: 235px;
+		}}
+
 		ul.nav {{
 			list-style-type: none;
 			padding-left: 0;
@@ -101,17 +104,15 @@ html_template = f"""<!DOCTYPE html>
 			background-color: {palette[1]};
 			margin-top: 27px;
 			width: 100%;
-			height: 10px;
+			height: 52px;
 			margin-left: 0;
 			position: fixed;
 			z-index: 1;
 		}}
 
 		div#body {{
-			position: fixed;
-			margin-top: 15px;
-			height: 100%;
-			padding-bottom: 100%;
+			position: absolute;
+			margin-top: 60px;
 			overflow: scroll;
 		}}
 
@@ -139,6 +140,12 @@ html_template = f"""<!DOCTYPE html>
 			background-color: {palette[2]};
 			color: white;
 			margin-top: 36px;
+			padding-top: 6px;
+			z-index: 2;
+		}}
+
+		a.nav:link, a.nav:hover, a.nav:visited, a.nav:active {{
+			color: white;
 		}}
 
 		/* Resize div for Pygments. */
