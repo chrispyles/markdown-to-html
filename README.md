@@ -6,30 +6,24 @@ You can find a sample of a site generated from this package at [https://mcautogr
 
 ## Installation
 
-The recommended method for installing this package is to add it as a submodule to the repo containing your Markdown files:
-
-```git
-git submodule add https://github.com/chrispyles/markdown-to-html
-```
-
-Then, when running the converter, the only changes to the syntax below would be prepending the folder name to the file path:
+The converter is installed using pip:
 
 ```
-python3 markdown-to-html/converter.py ...
+pip install md2html
 ```
 
 ## Usage
 
-This package is relies on the executable file `converter.py` and is meant to be run from the command line. Once you're in the directory which contains this file, the command line usage is
+This package an executable that can be run from the command line:
 
 ```
-python3 converter.py ...
+md2html ...
 ```
 
 Here is the help entry for this file:
 
 ```
-usage: converter.py [-h] [-s SITE] [-n NAV] ...
+usage: md2html [-h] [-s SITE] [-n NAV] ...
 
 convert Markdown to HTML
 
@@ -50,7 +44,7 @@ Running the converter will place HTML files in the same directory as your Markdo
 If you would like to add metadata to your page, including a navigation menu, do so by creating a YAML file containing this metadata and passing the file path to the `-s` flag, e.g.
 
 ```
-python3 converter.py -s meta.yml ...
+md2html -s meta.yml ...
 ```
 
 The structure of your YAML file should be:
@@ -89,3 +83,9 @@ links:
     url: ...
   ...
 ```
+
+## Changelog
+
+**v0.1.0:**
+
+* Initial release

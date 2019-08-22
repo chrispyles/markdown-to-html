@@ -7,8 +7,8 @@ import re
 from pygments import highlight
 from pygments.lexers import PythonLexer
 from pygments.formatters import HtmlFormatter
-from pygments_style import Monokai
-from pygments_style import Colors
+from .pygments_style import Monokai
+from .pygments_style import Colors
 
 # get css from pygments for syntax highlighting
 code_css = HtmlFormatter(style=Monokai).get_style_defs("")
