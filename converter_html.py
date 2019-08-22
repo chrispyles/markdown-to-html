@@ -69,7 +69,7 @@ html_template = f"""<!DOCTYPE html>
 
 		ul.nav {{
 			list-style-type: none;
-			padding-left: 0;
+			padding-left: 15px;
 		}}
 
 		li.nav {{
@@ -123,6 +123,12 @@ html_template = f"""<!DOCTYPE html>
 			border-bottom: 1px solid black;
 			border-spacing: 0;
 			table-layout: fixed;
+		}}
+
+		table#header {{
+			width: 100%;
+		    height: auto;
+		    border: none;
 		}}
 
 		p.code {{

@@ -48,7 +48,7 @@ if has_nav:
 		with open(namespace["nav"]) as f:
 			nav = yaml.safe_load(f)
 
-	nav_html = "<body><nav>\n<h3>" + nav["nav_title"] + "</h3>\n<ul class=\"nav\">\n"
+	nav_html = "<body><nav>\n<h3 style=\"padding-left: 20px;\">" + nav["nav_title"] + "</h3>\n<ul class=\"nav\">\n"
 
 	for link in nav["links"]:
 		nav_html += "<li class=\"nav\"><a class=\"nav\" href=\"" + link["url"] + "\">" + link["title"] + "</a></li>\n"
@@ -234,15 +234,31 @@ else:
 		try:
 			if page_url == "index":
 				top_div = f"""<body>
-				<div id="top"><p id="header">
+				<div id="top">
+
+				<table id="header"><tr><td style="border: none;">
+				<p id="header" style="text-align: left;">
 				{home_page_name}
-				</p></div>
+				</p></td><td style="border: none;">
+				<p id="header" style="text-align: right; margin-right: 38px; padding-left: 0;">
+				{meta["title"]}
+				</p></td></tr></table>
+
+				</div>
 				<nav>"""
 			else:
 				top_div = f"""<body>
-				<div id="top"><p id="header">
+				<div id="top">
+
+				<table id="header"><tr><td style="border: none;">
+				<p id="header" style="text-align: left;">
 				<a class="nav" href="index.html">{home_page_name}</a> &nbsp;<span style="font-size: 9pt;">►</span>&nbsp; {page_title}
-				</p></div>
+				</p></td><td style="border: none;">
+				<p id="header" style="text-align: right; margin-right: 38px; padding-left: 0;">
+				{meta["title"]}
+				</p></td></tr></table>
+
+				</div>
 				<nav>"""
 
 		except NameError:
