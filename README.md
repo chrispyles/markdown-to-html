@@ -86,6 +86,10 @@ links:
 
 ## Changelog
 
-**v0.1.0:**
+**v1.0:**
+
+* Changed to Boostrap CSS
+
+**v0.1:**
 
 * Initial release
