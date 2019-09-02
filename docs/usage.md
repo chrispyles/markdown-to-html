@@ -1,18 +1,4 @@
-# Markdown to HTML Converter
-
-This is a converter from Markdown to HTML with advanced support for Markdown tables and GFM syntax highlighting. This package relies on `markdown2` for converting basic Markdown to HTML and `pygments` to support code to HTML conversion for syntax highlighting. The default (and, currently, only) theme for this package is Monokai.
-
-You can find a sample of a site generated from this package at [https://mcautograder.chrispyles.io](https://mcautograder.chrispyles.io).
-
-## Installation
-
-The converter is installed using pip:
-
-```
-pip install md2html
-```
-
-## Usage
+# Usage
 
 This package an executable that can be run from the command line:
 
@@ -39,7 +25,7 @@ optional arguments:
 
 Running the converter will place HTML files in the same directory as your Markdown files, with the `.md` extension replaced with `.html`. The HTML files come with CSS in a `style` tag in the `head`.
 
-### Page Metadata
+## Page Metadata
 
 If you would like to add metadata to your page, including a navigation menu, do so by creating a YAML file containing this metadata and passing the file path to the `-s` flag, e.g.
 
@@ -70,7 +56,7 @@ Currently, the `title` must be set if you use this option. The converter does no
 * [Link 3]()
 * etc.
 
-### Navigation Menu
+## Navigation Menu
 
 The converter also supports adding only a navigation menu without page metadata. To do this, pass a YAML file to the `-n` flag. It should have the following structure:
 
@@ -83,22 +69,3 @@ links:
     url: ...
   ...
 ```
-
-## Changelog
-
-**v1.2:**
-
-* Added YAML syntax highlighting
-
-**v1.1:**
-
-* Added docstrings for documentation
-* Moved some utils out of `md2html/converter.py`
-
-**v1.0:**
-
-* Changed to Boostrap CSS
-
-**v0.1:**
-
-* Initial release

@@ -7,6 +7,10 @@ from pygments.style import Style
 from pygments.token import Keyword, Name, Comment, String, Error, Number, Operator, Generic
 
 class Colors:
+	"""
+	Colors for Monokai color scheme
+	"""
+
 	BLUE = "#53d1ed"
 	GREEN = "#96e309"
 	ORANGE = "#fd8700"
@@ -18,6 +22,10 @@ class Colors:
 	GREY = "#625f4b"
 
 class Monokai(Style):
+	"""
+	Monokai theme for pygments
+	"""
+
 	default_style = ""
 	styles = {
 		Comment: "italic {}".format(Colors.ORANGE),
