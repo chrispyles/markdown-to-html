@@ -1,5 +1,7 @@
 # Markdown to HTML Converter
 
+[![Build Status](https://travis-ci.org/chrispyles/markdown-to-html.svg?branch=master)](https://travis-ci.org/chrispyles/markdown-to-html)
+
 This is a converter from Markdown to HTML with advanced support for Markdown tables and GFM syntax highlighting. This package relies on `markdown2` for converting basic Markdown to HTML and `pygments` to support code to HTML conversion for syntax highlighting. The default (and, currently, only) theme for this package is Monokai.
 
 You can find a sample of a site generated from this package at [https://mcautograder.chrispyles.io](https://mcautograder.chrispyles.io).

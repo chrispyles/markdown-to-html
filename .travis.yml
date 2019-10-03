@@ -8,6 +8,8 @@ matrix:
   allow_failures:
     - python: "nightly"
 
+sudo: false
+
 install:
   - pip install -r requirements.txt
 
