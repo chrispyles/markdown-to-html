@@ -16,7 +16,7 @@ lexers = {
 	"yaml" : lx.YamlLexer
 }
 
-code_regex = r"\`\`\`\w*\n(.*\n)+?\`\`\`"
+md_code_regex = r"\`\`\`\w*\n(.*\n)+?\`\`\`"
 code_start_regex = r"```\w*"
 
 def get_syntax(code):

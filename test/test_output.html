@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+
+<!--
+		Generated using Markdown to HTML Converter by Chris Pyles.
+		More at https://github.com/chrispyles/markdown-to-html
+-->
+
+<html>
+<head>
+	<title>MD to HTML Converter Test</title>
+	<meta name="description" content="test HTML output for MD to HTML converter">
+	<meta name="author" content="Chris Pyles">
+	<!-- <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700&display=swap" rel="stylesheet"> -->
+
+	<!-- Boostrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    
+	<style type="text/css">
+
+		/* CSS for MD to HTML Converter
+			by Chris Pyles
+
+    	body {
+    		margin-top: -27px;
+    		margin-left: 0;
+    		background-color: #00b0da;
+    	}
+
+		h1, h2, h3, h4, h5, h6 {
+			font-family: '=', sans-serif;
+			font-weight: 600;
+		}
+
+		h1, h2 {
+			letter-spacing: 1px;
+		}
+
+		h1 {
+			font-size: 30pt;
+		}
+
+		h2 {
+			font-size: 20pt;
+		}
+
+		h3 {
+			font-size: 14pt;
+		}
+
+		p, ul, th, td, ol {
+			font-family: '=', sans-serif;
+			font-size: 12pt;
+		}
+
+		p#header {
+			color: white;
+			padding-left: 235px;
+		}
+
+		ul.nav {
+			list-style-type: none;
+			padding-left: 15px;
+		}
+
+		li.nav {
+			padding-left: 20px;
+			width: 230px;
+		}
+
+		li.nav:hover {
+			background-color: rgba(256, 256, 256, 0.5);
+		}
+
+		th, td {
+			border-top: 1px solid black;
+			border-left: 1px solid black;
+			text-align: center;
+			padding: 5px 2px;
+		}
+
+		th {
+			font-weight: 600;
+		}
+
+		div {
+			width: 800px;
+			margin: 0 0 0 255px;
+			background-color: white;
+			padding: 0 20px;
+			margin-top: -27px;
+		}
+
+		div#top {
+			background-color: #46535e;
+			margin-top: 27px;
+			width: 100%;
+			height: 52px;
+			margin-left: 0;
+			position: fixed;
+			z-index: 1;
+		}
+
+		div#body {
+			position: absolute;
+			margin-top: 60px;
+			overflow: scroll;
+		}
+
+		table {
+			width: 75%;
+			margin: 0 auto;
+			border-right: 1px solid black;
+			border-bottom: 1px solid black;
+			border-spacing: 0;
+			table-layout: fixed;
+		}
+
+		table#header {
+			width: 100%;
+		    height: auto;
+		    border: none;
+		}
+
+		p.code {
+			width: 95%;
+			margin: 10px auto;
+			padding: 10px;
+			background-color: rgba(222, 222, 222, 0.5);
+		}
+
+		nav {
+			position: fixed;
+			width: 250px;
+			padding-left: 5px;
+			height: 100%;
+			background-color: #46535e;
+			color: white;
+			margin-top: 36px;
+			padding-top: 6px;
+			z-index: 2;
+		}
+
+		a.nav:link, a.nav:hover, a.nav:visited, a.nav:active {
+			color: white;
+		}
+
+		*/
+
+		/* Resize div for Pygments. */
+		div.highlight {
+			font-size: 12pt;
+			width: 98%;
+			margin: 10px auto;
+			padding: 10px;
+			background-color: #1d1e19;
+			color: #f6f7ee !important;
+			overflow: scroll;
+			border-radius: 5px;
+		}
+
+		pre {
+			margin: 0;
+			color: #f6f7ee !important;
+		}
+
+		.p {
+			color: #f6f7ee !important;
+		}
+
+		/* Below is imported the style from Pygments. */
+
+		.hll { background-color: #ffffcc }
+.c { color: #fd8700; font-style: italic } /* Comment */
+.g { color: #fd8700 } /* Generic */
+.k { color: #53d1ed; font-weight: bold } /* Keyword */
+.n { color: #f6f7ee } /* Name */
+.o { color: #f7005f } /* Operator */
+.ch { color: #fd8700; font-style: italic } /* Comment.Hashbang */
+.cm { color: #fd8700; font-style: italic } /* Comment.Multiline */
+.cp { color: #fd8700; font-style: italic } /* Comment.Preproc */
+.cpf { color: #fd8700; font-style: italic } /* Comment.PreprocFile */
+.c1 { color: #fd8700; font-style: italic } /* Comment.Single */
+.cs { color: #fd8700; font-style: italic } /* Comment.Special */
+.gd { color: #fd8700 } /* Generic.Deleted */
+.ge { color: #fd8700 } /* Generic.Emph */
+.gr { color: #fd8700 } /* Generic.Error */
+.gh { color: #fd8700 } /* Generic.Heading */
+.gi { color: #fd8700 } /* Generic.Inserted */
+.go { color: #fd8700 } /* Generic.Output */
+.gp { color: #fd8700 } /* Generic.Prompt */
+.gs { color: #fd8700 } /* Generic.Strong */
+.gu { color: #fd8700 } /* Generic.Subheading */
+.gt { color: #fd8700 } /* Generic.Traceback */
+.kc { color: #53d1ed; font-weight: bold } /* Keyword.Constant */
+.kd { color: #53d1ed; font-weight: bold } /* Keyword.Declaration */
+.kn { color: #53d1ed; font-weight: bold } /* Keyword.Namespace */
+.kp { color: #53d1ed; font-weight: bold } /* Keyword.Pseudo */
+.kr { color: #53d1ed; font-weight: bold } /* Keyword.Reserved */
+.kt { color: #53d1ed; font-weight: bold } /* Keyword.Type */
+.m { color: #9d60ff } /* Literal.Number */
+.s { color: #e0d75a } /* Literal.String */
+.na { color: #f6f7ee } /* Name.Attribute */
+.nb { color: #f6f7ee } /* Name.Builtin */
+.nc { color: #53d1ed; font-weight: bold } /* Name.Class */
+.no { color: #f6f7ee } /* Name.Constant */
+.nd { color: #f6f7ee } /* Name.Decorator */
+.ni { color: #f6f7ee } /* Name.Entity */
+.ne { color: #f6f7ee } /* Name.Exception */
+.nf { color: #96e309 } /* Name.Function */
+.nl { color: #f6f7ee } /* Name.Label */
+.nn { color: #f6f7ee } /* Name.Namespace */
+.nx { color: #f6f7ee } /* Name.Other */
+.py { color: #f6f7ee } /* Name.Property */
+.nt { color: #f6f7ee } /* Name.Tag */
+.nv { color: #f6f7ee } /* Name.Variable */
+.ow { color: #f7005f } /* Operator.Word */
+.mb { color: #9d60ff } /* Literal.Number.Bin */
+.mf { color: #9d60ff } /* Literal.Number.Float */
+.mh { color: #9d60ff } /* Literal.Number.Hex */
+.mi { color: #9d60ff } /* Literal.Number.Integer */
+.mo { color: #9d60ff } /* Literal.Number.Oct */
+.sa { color: #e0d75a } /* Literal.String.Affix */
+.sb { color: #e0d75a } /* Literal.String.Backtick */
+.sc { color: #e0d75a } /* Literal.String.Char */
+.dl { color: #e0d75a } /* Literal.String.Delimiter */
+.sd { color: #e0d75a } /* Literal.String.Doc */
+.s2 { color: #e0d75a } /* Literal.String.Double */
+.se { color: #e0d75a } /* Literal.String.Escape */
+.sh { color: #e0d75a } /* Literal.String.Heredoc */
+.si { color: #e0d75a } /* Literal.String.Interpol */
+.sx { color: #e0d75a } /* Literal.String.Other */
+.sr { color: #e0d75a } /* Literal.String.Regex */
+.s1 { color: #e0d75a } /* Literal.String.Single */
+.ss { color: #e0d75a } /* Literal.String.Symbol */
+.bp { color: #f6f7ee } /* Name.Builtin.Pseudo */
+.fm { color: #96e309 } /* Name.Function.Magic */
+.vc { color: #f6f7ee } /* Name.Variable.Class */
+.vg { color: #f6f7ee } /* Name.Variable.Global */
+.vi { color: #f6f7ee } /* Name.Variable.Instance */
+.vm { color: #f6f7ee } /* Name.Variable.Magic */
+.il { color: #9d60ff } /* Literal.Number.Integer.Long */
+
+	</style>
+	
+</head>
+<body><nav class="navbar navbar-expand-md navbar-light bg-light">
+	
+	<a class="navbar-brand" href="#">Navigation</a>
+	
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    	<span class="navbar-toggler-icon"></span>
+ 	</button>
+
+ 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+ 		<ul class="navbar-nav ml-auto">
+				<li class="nav-item active"><a class="nav-link" href="test.html">Link 1</a></li>
+			<li class="nav-item active"><a class="nav-link" href="test.html">Link 2</a></li>
+			<li class="nav-item active"><a class="nav-link" href="test.html">Link 3</a></li>
+</ul></div></nav>
+
+<div class="container" id="body">
+
+<h1>markdown-to-html</h1>
+
+<p>This is a test <em>markdown</em> <strong>file</strong>.</p>
+
+<h2>this is a level 2 header</h2>
+
+<h3>this is a level 3 header</h3>
+
+<p><a href="https://mybinder.org/v2/gh/chrispyles/census_api/master"><img src="https://mybinder.org/badge_logo.svg" alt="Binder" /></a></p>
+
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">markdown2</span> <span class="kn">as</span> <span class="nn">md</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;this is a string&quot;</span>
+<span class="mi">4</span> <span class="o">*</span> <span class="mi">7</span> <span class="o">-</span> <span class="mi">11</span> <span class="o">%</span> <span class="mi">5</span>
+<span class="n">md</span><span class="o">.</span><span class="n">do_something</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">fn</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+	<span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>pip install something
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>this does not have highlighting
+</pre></div>
+
+
+<table class="table"><tr><th scope="col">This is</th><th scope="col">a</th><th scope="col">table</th></tr><tr><td>1</td><td>2</td><td>3</td></tr><tr><td>4</td><td>5</td><td>6</td></tr></table>
+
+</div></body>
+</html>

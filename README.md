@@ -86,6 +86,11 @@ links:
 
 ## Changelog
 
+**v1.3.0:**
+
+* Added unit tests & Travis CI
+* Refactored `bin/md2html` so that parser code is in `md2html/__init__.py`
+
 **v1.2:**
 
 * Added YAML syntax highlighting

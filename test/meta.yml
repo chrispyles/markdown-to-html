@@ -1,0 +1,17 @@
+#######################################################
+##### YAML Metadata for MD to HTML Converter Test #####
+#####                by Chris Pyles               #####
+#######################################################
+
+title: MD to HTML Converter Test
+author: Chris Pyles
+description: test HTML output for MD to HTML converter
+navigation:
+  nav_title: Navigation
+  links:
+    - title: Link 1
+      url: test.html
+    - title: Link 2
+      url: test.html
+    - title: Link 3
+      url: test.html

@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
 	name = "md2html",
-	version = "1.2",
+	version = "1.3.0",
 	author = "Chris Pyles",
 	author_email = "cpyles@berkeley.edu",
 	description = "MD to HTML converter",
