@@ -1,6 +1,6 @@
 # Markdown to HTML Converter
 
-[![Build Status](https://travis-ci.org/chrispyles/markdown-to-html.svg?branch=master)](https://travis-ci.org/chrispyles/markdown-to-html)
+[![Build Status](https://travis-ci.org/chrispyles/markdown-to-html.svg?branch=master)](https://travis-ci.org/chrispyles/markdown-to-html) [![codecov](https://codecov.io/gh/chrispyles/markdown-to-html/branch/master/graph/badge.svg)](https://codecov.io/gh/chrispyles/markdown-to-html)
 
 This is a converter from Markdown to HTML with advanced support for Markdown tables and GFM syntax highlighting. This package relies on `markdown2` for converting basic Markdown to HTML and `pygments` to support code to HTML conversion for syntax highlighting. The default (and, currently, only) theme for this package is Monokai.
 
