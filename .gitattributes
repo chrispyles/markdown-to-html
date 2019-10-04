@@ -1,2 +1,2 @@
-* linguist-vendorered
-*.py linguist-vendored=false
+* linguist-detectable=false
+*.py linguist-vendored=true
